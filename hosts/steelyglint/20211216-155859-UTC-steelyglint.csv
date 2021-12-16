@@ -1,0 +1,3 @@
+20211216-155859-UTC, Linux steelyglint 5.4.0-90-generic #101-Ubuntu SMP Fri Oct 15 20:00:55 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, e6de81aa6aa1f472937fd99db343914f, -rwxr-xr-x 1 root root 2.3K Sep 16 2020, /etc/NetworkManager/dispatcher.d/01-ifupdown
+20211216-155859-UTC, Linux steelyglint 5.4.0-90-generic #101-Ubuntu SMP Fri Oct 15 20:00:55 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, bc63b0c6613e95979446d17a88875d6a, -rwxr-xr-x 1 root root 210 May 20 2021, /etc/pm/sleep.d/10_grub-common
+20211216-155859-UTC, Linux steelyglint 5.4.0-90-generic #101-Ubuntu SMP Fri Oct 15 20:00:55 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, 1b8e20c4febe82baa213e180151cd4b9, -rwxr-xr-x 1 root root 215 Apr 29 2020, /etc/xdg/Xwayland-session.d/00-xrdb

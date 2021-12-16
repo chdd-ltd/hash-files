@@ -2,25 +2,48 @@
 
 function HASH_FILES () {
     DIRS=$2
-    echo -e "\nLooking for $1s in ${#DIRS[@]} directories"
+    echo -e "\nLooking for $1 in ${#DIRS[@]} directories"
+
     for DIR in ${DIRS[@]}
     do
         if [ -d $DIR ]
         then 
+            TEMP_FILE=$(mktemp)    
+            #echo "TEMP_FILE=$TEMP_FILE"
 
             case "$1" in
                 "executable")
-                    find $DIR -type f -executable -exec md5sum {} \; >> temp.txt    
+                    find $DIR -type f -executable -exec md5sum {} \; >> $TEMP_FILE
                 ;;
                 "non-executable")
-                    find $DIR -type f \! -executable -exec md5sum {} \; >> temp.txt    
+                    find $DIR -type f \! -executable -exec md5sum {} \; >> $TEMP_FILE
                 ;;
-                "filelist")
-                    echo  "Sending SIGQUIT signal"
+                "all-files")
+                    find $DIR -type f -exec md5sum {} \; >> $TEMP_FILE
+                ;;
+                "uid-gid-files")
+                    find $DIR -type f -perm -4000 2>/dev/null -exec md5sum {} \; >> $TEMP_FILE
+                    find $DIR -type f -perm -2000 2>/dev/null -exec md5sum {} \; >> $TEMP_FILE
+                ;;
+                "uid-gid-sticky")
+                    # Note: you can't md5sum a directory, so we are md5ing its name
+                    PERM=(-1000 -2000 -4000)
+                    for P in ${PERM[@]}
+                    do 
+                        #echo "P=$P"
+                        HASH_NAME=()
+                        TMP=( $(find $DIR -type d -perm $P 2>/dev/null) )
+                        #echo "${#TMP[@]}"
+                        for D in ${TMP[@]}
+                        do 
+                            HASH=$(echo "$D" |md5sum |cut -d' ' -f1)
+                            echo "$HASH $D" >> $TEMP_FILE
+                        done
+                    done                  
                 ;;
             esac
 
-            if [ -s temp.txt ]
+            if [ -s $TEMP_FILE ]
             then 
                 TS=$(date --utc +"%Y%m%d-%H%M%S-%Z")
                 UN=$(uname -a)
@@ -34,18 +57,32 @@ function HASH_FILES () {
                         #echo "$LINE"
                         HASH=$(echo "$LINE" |sed 's/  / /g' |cut -d' ' -f1)
                         FILE=$(echo "$LINE" |sed 's/  / /g' |cut -d' ' -f2)
-                        LS=$(ls -lah $FILE |sed 's/  / /g' |cut -d' ' -f1,2,3,4,5,6,7,8)
+
+                        if [ $1 == "uid-gid-sticky" ]
+                        then
+                            LS=$(ls -lahd $FILE |sed 's/  / /g' |cut -d' ' -f1,2,3,4,5,6,7,8)
+                        else
+                            LS=$(ls -lah $FILE |sed 's/  / /g' |cut -d' ' -f1,2,3,4,5,6,7,8)
+                        fi
+
                         echo "$TS, $UN, $HASH, $LS, $FILE" |sed 's/  / /g' >> hosts/$HT/$TS-$HT.csv
                     fi
-                done < temp.txt
+                done < $TEMP_FILE
 
                 echo "$DIR $(wc -l hosts/$HT/$TS-$HT.csv)"
-                rm temp.txt
             else
-                echo "\$DIR=$DIR"
+                echo "$DIR"
             fi
+
+            if [ -e $TEMP_FILE ]
+            then
+                rm $TEMP_FILE
+            fi
+
         fi
+
     done
+
 }
 
 #- Executable files -----------------------------------------------------------#
@@ -56,7 +93,7 @@ DIRS=$(find / -maxdepth 1 ! -type l -regex ".*[a-z].*" \( \
 TMP=$(echo "$DIRS" |tr '\n' ' ')
 #echo -e "\n\$TMP=$TMP"
 DIRS=( $(find $TMP -maxdepth 1 -type d -regex "\/.*\/.*") )
-#DIRS=(/etc)
+#DIRS=(/XYZ)
 #echo "DIRS ${#DIRS[@]}"
 #echo "DIRS ${DIRS[@]}"
 HASH_FILES "executable" "$DIRS"
@@ -64,7 +101,27 @@ HASH_FILES "executable" "$DIRS"
 
 #- Non-Executable files -------------------------------------------------------#
 DIRS=(/etc)
+#DIRS=(/XYZ)
 HASH_FILES "non-executable" "$DIRS"
 
+#- Find directories -----------------------------------------------------------#
+DIR_NAME=(/root_.ssh /home_.ssh)
+for D in ${DIR_NAME[@]}
+do 
+    DIR=$(echo $D |cut -d'_' -f1)
+    NAME=$(echo $D |cut -d'_' -f2)
+    #echo "D=$D DIR=$DIR NAME=$NAME"
+    DIRS=( $(find $DIR -type d -name $NAME) )
+    #echo "DIRS=${DIRS[@]}"
+    HASH_FILES "all-files" "$DIRS"
+done
+
+#- uid-gid-files --------------------------------------------------------------#
+DIRS=(/)
+HASH_FILES "uid-gid-files" "$DIRS"
+
+#- uid-gid-sticky -------------------------------------------------------------#
+DIRS=(/)
+HASH_FILES "uid-gid-sticky" "$DIRS"
 
 
