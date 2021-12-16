@@ -1,0 +1,70 @@
+#!/bin/bash
+
+function HASH_FILES () {
+    DIRS=$2
+    echo -e "\nLooking for $1s in ${#DIRS[@]} directories"
+    for DIR in ${DIRS[@]}
+    do
+        if [ -d $DIR ]
+        then 
+
+            case "$1" in
+                "executable")
+                    find $DIR -type f -executable -exec md5sum {} \; >> temp.txt    
+                ;;
+                "non-executable")
+                    find $DIR -type f \! -executable -exec md5sum {} \; >> temp.txt    
+                ;;
+                "filelist")
+                    echo  "Sending SIGQUIT signal"
+                ;;
+            esac
+
+            if [ -s temp.txt ]
+            then 
+                TS=$(date --utc +"%Y%m%d-%H%M%S-%Z")
+                UN=$(uname -a)
+                HT=$(echo $UN |cut -d' ' -f2)
+                mkdir -p hosts/$HT
+
+                while read LINE 
+                do 
+                    if echo "$LINE" |grep -q -E -o '[0-9a-f]{32}.*'
+                    then 
+                        #echo "$LINE"
+                        HASH=$(echo "$LINE" |sed 's/  / /g' |cut -d' ' -f1)
+                        FILE=$(echo "$LINE" |sed 's/  / /g' |cut -d' ' -f2)
+                        LS=$(ls -lah $FILE |sed 's/  / /g' |cut -d' ' -f1,2,3,4,5,6,7,8)
+                        echo "$TS, $UN, $HASH, $LS, $FILE" |sed 's/  / /g' >> hosts/$HT/$TS-$HT.csv
+                    fi
+                done < temp.txt
+
+                echo "$DIR $(wc -l hosts/$HT/$TS-$HT.csv)"
+                rm temp.txt
+            else
+                echo "\$DIR=$DIR"
+            fi
+        fi
+    done
+}
+
+#- Executable files -----------------------------------------------------------#
+DIRS=$(find / -maxdepth 1 ! -type l -regex ".*[a-z].*" \( \
+    ! -name "cdrom" ! -name "dev" ! -name "lost+found" ! -name "media" \
+    ! -name "mnt" ! -name "opt" ! -name "proc" ! -name "run" ! -name "srv" \
+    ! -name "swapfile" ! -name "sys" \))
+TMP=$(echo "$DIRS" |tr '\n' ' ')
+#echo -e "\n\$TMP=$TMP"
+DIRS=( $(find $TMP -maxdepth 1 -type d -regex "\/.*\/.*") )
+#DIRS=(/etc)
+#echo "DIRS ${#DIRS[@]}"
+#echo "DIRS ${DIRS[@]}"
+HASH_FILES "executable" "$DIRS"
+
+
+#- Non-Executable files -------------------------------------------------------#
+DIRS=(/etc)
+HASH_FILES "non-executable" "$DIRS"
+
+
+
