@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 function HASH_FILES () {
     DIRS=$2
@@ -48,7 +48,7 @@ function HASH_FILES () {
                 TS=$(date --utc +"%Y%m%d-%H%M%S-%Z")
                 UN=$(uname -a)
                 HT=$(echo $UN |cut -d' ' -f2)
-                mkdir -p hosts/$HT
+                mkdir -p test/$HT
 
                 while read LINE 
                 do 
@@ -65,11 +65,11 @@ function HASH_FILES () {
                             LS=$(ls -lah $FILE |sed 's/  / /g' |cut -d' ' -f1,2,3,4,5,6,7,8)
                         fi
 
-                        echo "$TS, $UN, $HASH, $LS, $FILE" |sed 's/  / /g' >> hosts/$HT/$TS-$HT.csv
+                        echo "$TS, $UN, $HASH, $LS, $FILE" |sed 's/  / /g' >> test/$HT/$TS-$HT.csv
                     fi
                 done < $TEMP_FILE
 
-                echo "$DIR $(wc -l hosts/$HT/$TS-$HT.csv)"
+                echo "$DIR $(wc -l test/$HT/$TS-$HT.csv)"
             else
                 echo "$DIR"
             fi
@@ -78,11 +78,8 @@ function HASH_FILES () {
             then
                 rm $TEMP_FILE
             fi
-
         fi
-
     done
-
 }
 
 #- Executable files -----------------------------------------------------------#
