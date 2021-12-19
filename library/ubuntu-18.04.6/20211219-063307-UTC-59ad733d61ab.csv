@@ -1,0 +1,5 @@
+20211219-063307-UTC, Linux 59ad733d61ab 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, d9e6a7c85e966427ef23a04ec6c7000f, -rwxr-xr-x 1 root root 1016 Apr 5 2018, /etc/security/namespace.init
+20211219-063307-UTC, Linux 59ad733d61ab 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, 4ad976a68f045517cf4696cec7b8aa3a, -rwxr-xr-x 1 root root 2.9K Apr 20 2018, /etc/kernel/postinst.d/apt-auto-removal
+20211219-063307-UTC, Linux 59ad733d61ab 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, 49e9b2cfa17849700d4db735d04244f3, -rwxr-xr-x 1 root root 1.5K Apr 20 2018, /etc/cron.daily/apt-compat
+20211219-063307-UTC, Linux 59ad733d61ab 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, 4a75e177a3662e2efd8d477ae8e8533b, -rwxr-xr-x 1 root root 1.2K Nov 2 2017, /etc/cron.daily/dpkg
+20211219-063307-UTC, Linux 59ad733d61ab 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, db990990933b6f56322725223f13c2bc, -rwxr-xr-x 1 root root 249 Jan 25 2018, /etc/cron.daily/passwd

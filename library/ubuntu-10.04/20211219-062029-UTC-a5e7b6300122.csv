@@ -1,0 +1,6 @@
+20211219-062029-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 8d373afe69555c9e5f16bd634af00a0c, -rwxr-xr-x 1 root root 261 Apr 23 2010, /etc/update-motd.d/99-footer
+20211219-062029-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 63efa9c5c55b4fc59f59087e9139ab1d, -rwxr-xr-x 1 root root 248 Apr 23 2010, /etc/update-motd.d/10-help-text
+20211219-062029-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 656757ce8765f38ff18b4d3fe813e4ad, -rwxr-xr-x 1 root root 57 Apr 23 2010, /etc/update-motd.d/00-header
+20211219-062029-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, be2d7ca79c30064a88777f8c6c1d19fe, -rwxr-xr-x 1 root root 133 Feb 20 2010, /etc/network/if-down.d/upstart
+20211219-062029-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 4edc4267af9a0bb5aebff50ee4671513, -rwxr-xr-x 1 root root 131 Feb 20 2010, /etc/network/if-up.d/upstart
+20211219-062029-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, d6d81977a07a9607b75a17a01b1f95ce, -rwxr-xr-x 1 root root 1.2K Feb 3 2010, /etc/network/if-up.d/ntpdate

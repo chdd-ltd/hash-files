@@ -1,6 +1,23 @@
-#!/bin/sh
+#!/bin/bash
 
-function HASH_FILES () {
+UID_GID_STICKY () {
+    # Note: you can't md5sum a directory, so we are md5ing its name
+    PERM=(-1000 -2000 -4000)
+    for P in ${PERM[@]}
+    do 
+        #echo "P=$P"
+        #HASH_NAME=()
+        TMP=( $(find $DIR -type d -perm $P 2>/dev/null) )
+        #echo "${#TMP[@]}"
+        for D in ${TMP[@]}
+        do 
+            HASH=$(echo "$D" |md5sum |cut -d' ' -f1)
+            echo "$HASH $D" >> $TEMP_FILE
+       done
+    done
+}
+
+HASH_FILES () {
     DIRS=$2
     echo -e "\nLooking for $1 in ${#DIRS[@]} directories"
 
@@ -15,31 +32,22 @@ function HASH_FILES () {
                 "executable")
                     find $DIR -type f -executable -exec md5sum {} \; >> $TEMP_FILE
                 ;;
+
                 "non-executable")
                     find $DIR -type f \! -executable -exec md5sum {} \; >> $TEMP_FILE
                 ;;
+
                 "all-files")
                     find $DIR -type f -exec md5sum {} \; >> $TEMP_FILE
                 ;;
+
                 "uid-gid-files")
                     find $DIR -type f -perm -4000 2>/dev/null -exec md5sum {} \; >> $TEMP_FILE
                     find $DIR -type f -perm -2000 2>/dev/null -exec md5sum {} \; >> $TEMP_FILE
                 ;;
+
                 "uid-gid-sticky")
-                    # Note: you can't md5sum a directory, so we are md5ing its name
-                    PERM=(-1000 -2000 -4000)
-                    for P in ${PERM[@]}
-                    do 
-                        #echo "P=$P"
-                        HASH_NAME=()
-                        TMP=( $(find $DIR -type d -perm $P 2>/dev/null) )
-                        #echo "${#TMP[@]}"
-                        for D in ${TMP[@]}
-                        do 
-                            HASH=$(echo "$D" |md5sum |cut -d' ' -f1)
-                            echo "$HASH $D" >> $TEMP_FILE
-                        done
-                    done                  
+                    UID_GID_STICKY
                 ;;
             esac
 

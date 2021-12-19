@@ -1,0 +1,5 @@
+20211219-062805-UTC, Linux af1cd62dbd0e 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, da9c29ed0b408ffd88d05c3d8e881e94, -rwxr-xr-x 1 root root 372 Aug 10 2017, /etc/cron.daily/logrotate
+20211219-062805-UTC, Linux af1cd62dbd0e 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, 47d23b9155b4d02788689d8c9765ca4b, -rwxr-xr-x 1 root root 328 Jul 18 2014, /etc/cron.daily/upstart
+20211219-062805-UTC, Linux af1cd62dbd0e 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, 38f629d906ca7e292db6e426cc403f98, -rwxr-xr-x 1 root root 16K Apr 10 2014, /etc/cron.daily/apt
+20211219-062805-UTC, Linux af1cd62dbd0e 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, b6b8dc21210ea50db7cc4636f521758f, -rwxr-xr-x 1 root root 256 Mar 7 2014, /etc/cron.daily/dpkg
+20211219-062805-UTC, Linux af1cd62dbd0e 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, db990990933b6f56322725223f13c2bc, -rwxr-xr-x 1 root root 249 Feb 17 2014, /etc/cron.daily/passwd

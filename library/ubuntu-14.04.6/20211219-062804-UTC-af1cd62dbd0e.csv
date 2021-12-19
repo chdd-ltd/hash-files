@@ -1,0 +1,4 @@
+20211219-062804-UTC, Linux af1cd62dbd0e 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, b46b23d64860d1557d2a8f44b231fd54, -rwxr-xr-x 1 root root 1019 Jan 31 2014, /etc/security/namespace.init
+20211219-062804-UTC, Linux af1cd62dbd0e 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, e22d1ab0d7a7a1b66ae6d71ea4f21938, -rwxr-xr-x 1 root root 814 Jun 1 2012, /etc/kernel/postrm.d/initramfs-tools
+20211219-062804-UTC, Linux af1cd62dbd0e 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, e076044579e46f022b217cf3cd98998f, -rwxr-xr-x 1 root root 2.8K Apr 10 2014, /etc/kernel/postinst.d/apt-auto-removal
+20211219-062804-UTC, Linux af1cd62dbd0e 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, fe7713b9a74a10ed71d1e7dd93afc209, -rwxr-xr-x 1 root root 858 Jun 1 2012, /etc/kernel/postinst.d/initramfs-tools

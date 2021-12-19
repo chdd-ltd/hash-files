@@ -1,0 +1,17 @@
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 097306edbb9c640047927e86fadc1ae9, drwxrwxrwt 2 root root 4.0K Dec 19 06:20, /tmp
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 22f573b384633c825d87bbe5abeac433, drwxrwxrwt 2 root root 40 Dec 19 06:18, /proc/acpi
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, a2f4545bf76c13c12bd5eb1e6b1071a1, drwxrwxrwt 2 root root 40 Dec 19 06:18, /proc/scsi
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 25b977878779a3ae89eba31c8e64388c, drwxrwxrwt 2 root root 40 Dec 19 06:18, /dev/shm
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 58e95cdb9dd8ebc7f78a8fc5197a2583, drwxrwxrwt 2 root root 40 Dec 19 06:18, /dev/mqueue
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 16db395249416bf5d51681820f37a1fb, drwxrwxrwt 2 root root 4.0K Apr 23 2010, /var/tmp
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 11ee432de499abdf93203c1c55f26e78, drwxrwxrwt 2 root root 4.0K Apr 23 2010, /var/lock
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 71ead0d0f06e74ef0f8df5cc5f07cf41, drwxrwxrwt 2 root root 40 Dec 19 06:18, /sys/dev/block
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 69cc14a8f6a8f68aaecc73fd3297f318, drwxrwxrwt 14 root root 360 Dec 19 06:18, /sys/fs/cgroup
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 565d12be9aeb8fcc9cf575b24dc54a88, drwxrwxrwt 2 root root 40 Dec 19 06:18, /sys/firmware
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 7b7b7c3184f03746bab29e0e75d2f35a, drwxrwsr-x 2 root src 4.0K Apr 23 2010, /usr/src
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, dde4a9a8e3dce84a225cfa4a2b58f224, drwxrwsr-x 4 root staff 4.0K Jan 29 2014, /usr/local/lib/python2.6
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, cbb14270bc97837b3188e68303345b88, drwxrwsr-x 2 root staff 4.0K Jan 29 2014, /usr/local/lib/python2.6/site-packages
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 35f957618e9b0f2c6da708d18e69c168, drwxrwsr-x 2 root staff 4.0K Jan 29 2014, /usr/local/lib/python2.6/dist-packages
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, cdf4721541e3452b13e6f9dc91674ef8, drwxrwsr-x 2 root mail 4.0K Jan 29 2014, /var/mail
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, a88809774d2fa139f2e1c0ba54c28d06, drwxrwsr-x 2 libuuid libuuid 4.0K Jan 29 2014, /var/lib/libuuid
+20211219-062051-UTC, Linux a5e7b6300122 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 GNU/Linux, 1bdf6e3d65dda9362888e60cfe1e345b, drwxrwsr-x 2 root staff 4.0K Apr 23 2010, /var/local

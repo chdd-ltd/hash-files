@@ -1,0 +1,52 @@
+#!/bin/bash 
+
+#echo "1=$1"
+#echo "2=$2"
+
+if [ -z $1 ] || [ -z $2 ] 
+then
+    echo "error: No test or library hostname"
+    echo "$0 test_hostname library_hostname" 
+    exit 1
+fi
+
+if [ ! -d $1 ]
+then
+    echo "error: No test hostname directory"
+    echo "$0 test_hostname library_hostname" 
+    exit 1
+fi
+
+if [ ! -d $2 ]
+then
+    echo "error: No library hostname directory"
+    echo "$0 test_hostname library_hostname" 
+    exit 1
+fi
+
+TEST_FILES=( $(find $1 -name "*.csv" ) )
+echo "TEST_FILES = $1 (${#TEST_FILES[@]})"
+LIBRARY_FILES=( $(find $2 -name "*.csv") )
+echo "LIBRARY_FILES = $2 (${#LIBRARY_FILES[@]})"
+LIBRARY_DIRECOTRY=$2
+
+END=${#TEST_FILES[@]}
+let END--
+for i in $(seq 0 $END)
+do
+    echo -e "$i ${TEST_FILES[$i]}"
+
+    while read LINE; do \
+        HASH=$(echo "$LINE" |cut -d',' -f3 |sed 's/ //g')
+        #echo "HASH=|$HASH|"
+
+        if ! grep -q -R "$HASH" $LIBRARY_DIRECOTRY
+        then
+            echo ""
+            echo "NOT FOUND!"
+            echo "$LINE"
+        fi
+
+    done < ${TEST_FILES[$i]}
+
+done

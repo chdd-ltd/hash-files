@@ -1,0 +1,3 @@
+20211219-063043-UTC, Linux 76df79bc3f25 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, bc4a71cbcaeed4179f25d798257fa980, -rwxr-xr-x 1 root root 1.5K Apr 28 2021, /etc/cron.daily/apt-compat
+20211219-063043-UTC, Linux 76df79bc3f25 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, b8065b6bfc248caba501c3f5bb508e66, -rwxr-xr-x 1 root root 1.6K Nov 26 2015, /etc/cron.daily/dpkg
+20211219-063043-UTC, Linux 76df79bc3f25 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, db990990933b6f56322725223f13c2bc, -rwxr-xr-x 1 root root 249 Nov 12 2015, /etc/cron.daily/passwd

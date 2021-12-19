@@ -1,0 +1,2 @@
+20211219-063042-UTC, Linux 76df79bc3f25 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, b46b23d64860d1557d2a8f44b231fd54, -rwxr-xr-x 1 root root 1019 Mar 16 2016, /etc/security/namespace.init
+20211219-063042-UTC, Linux 76df79bc3f25 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux, 8ad76ae4492b54f0dcbf18c79429dfab, -rwxr-xr-x 1 root root 2.7K Apr 28 2021, /etc/kernel/postinst.d/apt-auto-removal
